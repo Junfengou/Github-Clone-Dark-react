@@ -1,1 +1,1 @@
-Just a boilerplate react app
+Github profile search
