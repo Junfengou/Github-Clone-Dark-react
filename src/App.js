@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { GithubContext } from "./context/context";
 import MemeChart from "./Components/chartJSmeme";
 import Profile from "./Components/Profile";
+import Charts from "./Components/ChartData";
 import "./App.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 		<div className="App">
 			{/* <MemeChart /> */}
 			<Profile />
+			<Charts />
 		</div>
 	);
 }
