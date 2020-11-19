@@ -92,34 +92,38 @@ function List() {
 
 const Box = ({ label, fork, language, fullname, size, stars, url }) => {
 	var numForm = size.toLocaleString();
+	console.log("url: ", url);
 	return (
 		<BoxWrapper>
 			<div className="box_container">
-				{/* <h3>beginner-javascript</h3> */}
-				{/* <h6>Slam Dunk Javascript</h6> */}
-				{/* <p>HTML</p> */}
+				<a href={url}>
+					{/* <h3>beginner-javascript</h3> */}
+					{/* <h6>Slam Dunk Javascript</h6> */}
+					{/* <p>HTML</p> */}
 
-				<h3>
-					<RiGitRepositoryLine className="repo" /> {label}
-				</h3>
-				<h4>
-					<RiUserLocationFill className="fullname" />
-					{fullname}
-				</h4>
-				<div className="words">
-					<p className="word__first">
-						<BsFillCircleFill className="language" />
-						{language}
-					</p>
-					<p className="word__second">
-						<AiOutlineFork className="fork" /> {fork}
-					</p>
-					<p className="word__third">
-						<MdStar className="star" /> {stars}
-					</p>
+					<h3>
+						<RiGitRepositoryLine className="repo" />
+						{label}
+					</h3>
+					<h4>
+						<RiUserLocationFill className="fullname" />
+						{fullname}
+					</h4>
+					<div className="words">
+						<p className="word__first">
+							<BsFillCircleFill className="language" />
+							{language}
+						</p>
+						<p className="word__second">
+							<AiOutlineFork className="fork" /> {fork}
+						</p>
+						<p className="word__third">
+							<MdStar className="star" /> {stars}
+						</p>
 
-					<p>{numForm}KB</p>
-				</div>
+						<p>{numForm}KB</p>
+					</div>
+				</a>
 			</div>
 		</BoxWrapper>
 	);
@@ -208,6 +212,10 @@ const BoxWrapper = styled.div`
 	p {
 		font-size: 1rem;
 		font-family: "Harmattan", sans-serif;
+	}
+	a {
+		text-decoration: none;
+		color: var(--black);
 	}
 	.language {
 		color: var(--orange);
