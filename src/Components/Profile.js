@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { GithubContext } from "../context/context";
 import { MdBusiness, MdLocationOn, MdLink, MdColorLens } from "react-icons/md";
 import Box from "./Box";
 
 function Profile() {
-	const { githubUser } = useContext(GithubContext);
+	const { githubUser, request } = useContext(GithubContext);
 	const {
 		avatar_url,
 		bio,
@@ -63,6 +64,12 @@ function Profile() {
 					<Box data={followers} text="Followers" />
 					<Box data={following} text="Following" />
 				</div>
+				<div className="message">
+					<p>Request: {request} / 60</p>
+					<p>
+						<Link to="/">Search more users</Link>
+					</p>
+				</div>
 			</div>
 		</Wrapper>
 	);
@@ -100,6 +107,18 @@ const Wrapper = styled.div`
 		margin-top: -3rem !important;
 	}
 
+	.message {
+		/* border: solid red; */
+		width: 50%;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		p {
+			font-size: 1.3rem;
+			font-family: "Harmattan", sans-serif;
+		}
+	}
 	.item_container {
 		/* border: solid yellow; */
 		width: 30rem;

@@ -140,6 +140,8 @@ const Wrapper = styled.div`
 		/* border: solid blue; */
 		width: 80%;
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		margin-left: 2rem;
 		margin-bottom: 1rem;
 	}
@@ -169,6 +171,7 @@ const BoxWrapper = styled.div`
 	align-items: center;
 	background-color: var(--white);
 	margin-right: 12px;
+	box-shadow: 18px 0px 31px -10px rgba(64, 56, 64, 1);
 	/* cursor: pointer; */
 
 	.box_container {

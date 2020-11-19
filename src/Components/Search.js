@@ -8,7 +8,7 @@ import Main from "./Main";
 function Search() {
 	const [user, setUser] = useState("");
 	const history = useHistory();
-	const { searchGithubUser } = useContext(GithubContext);
+	const { searchGithubUser, request } = useContext(GithubContext);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -40,6 +40,7 @@ function Search() {
 						<button type="submit">Search</button>
 					</div>
 				</form>
+				<h3>Request: {request} / 60</h3>
 			</div>
 		</Wrapper>
 	);
@@ -71,7 +72,10 @@ const Wrapper = styled.div`
 
 	.search {
 		/* border: solid blue; */
-
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 		width: 40%;
 
 		form {

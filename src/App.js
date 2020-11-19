@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { GithubContext } from "./context/context";
-import MemeChart from "./Components/chartJSmeme";
 import Search from "./Components/Search";
 import Main from "./Components/Main";
 import "./App.css";

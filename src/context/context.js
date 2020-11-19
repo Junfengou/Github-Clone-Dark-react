@@ -12,6 +12,7 @@ const GithubProvider = ({ children }) => {
 	const [githubUser, setGithubUser] = useState(mockUser);
 	const [followers, setFollowers] = useState(mockFollowers);
 	const [repos, setRepos] = useState(mockRepos);
+	const [request, setRequest] = useState(0);
 
 	const searchGithubUser = async (user) => {
 		const getProfile = await axios(`${rootUrl}/users/${user}`).catch((err) =>
@@ -44,12 +45,34 @@ const GithubProvider = ({ children }) => {
 		} else {
 			console.log("do nothing for now");
 		}
+		checkRequest();
 	};
 
+	// ------------------------------------------------------------->
+	const checkRequest = () => {
+		//axios by default is a get request
+		axios(`${rootUrl}/rate_limit`)
+			.then(({ data }) => {
+				// console.log("result:", data);
+				let {
+					rate: { remaining },
+				} = data;
+				setRequest(remaining);
+				if (remaining === 0) {
+					// if the remaining request is 0
+					//throw an error
+					// toggleError(true, "Sorry, you have exceeded your hourly rate limit");
+					console.log("Sorry, you have exceeded your hourly rate limit");
+				}
+			})
+			.catch((err) => console.log(err));
+	};
+
+	useEffect(checkRequest, []);
 	console.log("githubUser : ", githubUser);
 	return (
 		<GithubContext.Provider
-			value={{ githubUser, repos, followers, searchGithubUser }}
+			value={{ githubUser, repos, followers, searchGithubUser, request }}
 		>
 			{children}
 		</GithubContext.Provider>
