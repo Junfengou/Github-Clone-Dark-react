@@ -110,7 +110,7 @@ const Wrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--grey);
+	background-color: var(--offWhite);
 
 	.chart_container {
 		/* border: solid blue; */
@@ -124,7 +124,7 @@ const Wrapper = styled.div`
 
 	.chart_box {
 		/* border: solid green; */
-		background-color: var(--lightestBlue);
+		background-color: var(--grey);
 		height: 100%;
 		width: 27rem;
 		border-radius: 20px;

@@ -6,6 +6,7 @@ import { AiOutlineFork } from "react-icons/ai";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { BsFillCircleFill } from "react-icons/bs";
 import { RiUserLocationFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 function List() {
 	const { repos } = useContext(GithubContext);
@@ -69,7 +70,11 @@ function List() {
 	return (
 		<Wrapper>
 			<div className="title">
-				<h1>Top repos by forks </h1>
+				<h1>
+					{" "}
+					<RiGitRepositoryLine className="repo" />
+					Top repository by fork
+				</h1>
 			</div>
 			<div className="content">
 				{forks.slice(0, 4).map((item) => {
@@ -85,7 +90,7 @@ function List() {
 	);
 }
 
-const Box = ({ label, fork, language, fullname, size, stars, html_url }) => {
+const Box = ({ label, fork, language, fullname, size, stars, url }) => {
 	var numForm = size.toLocaleString();
 	return (
 		<BoxWrapper>
@@ -97,10 +102,10 @@ const Box = ({ label, fork, language, fullname, size, stars, html_url }) => {
 				<h3>
 					<RiGitRepositoryLine className="repo" /> {label}
 				</h3>
-				<h5>
+				<h4>
 					<RiUserLocationFill className="fullname" />
 					{fullname}
-				</h5>
+				</h4>
 				<div className="words">
 					<p className="word__first">
 						<BsFillCircleFill className="language" />
@@ -129,18 +134,30 @@ const Wrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: var(--grey);
+	background-color: var(--offWhite);
 
 	.title {
 		/* border: solid blue; */
+		width: 80%;
 		display: flex;
 		margin-left: 2rem;
+		margin-bottom: 1rem;
 	}
 
 	.content {
 		display: flex;
 		margin-left: 2rem;
 		margin-bottom: 10px;
+	}
+
+	h1 {
+		/* text-decoration: underline; */
+		font-family: "Harmattan", sans-serif;
+	}
+
+	.repo {
+		color: var(--pink);
+		margin-right: 3px;
 	}
 `;
 
@@ -150,9 +167,9 @@ const BoxWrapper = styled.div`
 	width: 23rem;
 	display: flex;
 	align-items: center;
-	background-color: var(--offWhite);
+	background-color: var(--white);
 	margin-right: 12px;
-	cursor: pointer;
+	/* cursor: pointer; */
 
 	.box_container {
 		padding-left: 2rem;
@@ -177,8 +194,17 @@ const BoxWrapper = styled.div`
 		}
 	}
 
+	h3 {
+		font-family: "Big Shoulders Stencil Text", cursive;
+		font-size: 1.5rem;
+	}
+
+	h4 {
+		font-family: "Harmattan", sans-serif;
+	}
 	p {
-		font-size: 0.8rem;
+		font-size: 1rem;
+		font-family: "Harmattan", sans-serif;
 	}
 	.language {
 		color: var(--orange);

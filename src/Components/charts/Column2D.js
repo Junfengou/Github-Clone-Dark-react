@@ -5,7 +5,7 @@ import Chart from "fusioncharts/fusioncharts.charts";
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.candy";
 ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
-function Bar3D({ data }) {
+function Column2D({ data }) {
 	const chartConfigs = {
 		type: "column2d", // The chart type
 		height: "450", // Height of the chart
@@ -27,4 +27,4 @@ function Bar3D({ data }) {
 	return <ReactFC {...chartConfigs} />;
 }
 
-export default Bar3D;
+export default Column2D;

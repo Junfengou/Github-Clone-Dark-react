@@ -86,6 +86,7 @@ const Wrapper = styled.div`
 	align-items: center;
 	flex-direction: column;
 	background-color: var(--black);
+
 	color: var(--white);
 
 	.avatar {
@@ -133,7 +134,10 @@ const Wrapper = styled.div`
 	}
 
 	h1 {
-		font-size: 2rem;
+		/* font-size: 2rem; */
+		font-family: "Harmattan", sans-serif;
+		font-size: 1.6rem;
+		/* border: solid red; */
 	}
 
 	a {

@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 function Box({ data, text }) {
-	console.log("data: ", data);
-	console.log(text);
+	var numForm = data.toLocaleString();
+	// console.log("data: ", data);
+	// console.log(text);
 	return (
 		<Wrapper>
-			<h2>{data}</h2>
-			<h3>{text} </h3>
+			<h2>{numForm}</h2>
+			<p>{text} </p>
 		</Wrapper>
 	);
 }
@@ -21,8 +22,15 @@ const Wrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	h3 {
-		margin-top: -1rem;
+	h2 {
+		font-family: "Big Shoulders Stencil Text", cursive;
+	}
+
+	p {
+		margin-top: -1.2rem;
+		color: var(--grey);
+		font-size: 1.2rem;
+		font-family: "Harmattan", sans-serif;
 	}
 `;
 export default Box;

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { GithubContext } from "./context/context";
 import MemeChart from "./Components/chartJSmeme";
-import Profile from "./Components/Profile";
-import Charts from "./Components/ChartData";
-import List from "./Components/List";
+import Search from "./Components/Search";
+import Main from "./Components/Main";
 import "./App.css";
 
 function App() {
@@ -13,12 +13,18 @@ function App() {
 
 	return (
 		<div className="App">
-			{/* <MemeChart /> */}
-			<Profile />
-			<Charts />
-			<List />
+			<Router>
+				<Switch>
+					<Route path="/home" component={Main} />
+					<Route path="/" exact component={Search} />
+				</Switch>
+			</Router>
 		</div>
 	);
 }
 
 export default App;
+
+/**<Profile />
+			<Charts />
+			<List /> */
