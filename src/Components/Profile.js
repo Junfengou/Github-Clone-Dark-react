@@ -46,6 +46,7 @@ function Profile() {
 		},
 	];
 
+	console.log("items: ", items);
 	return (
 		<Wrapper>
 			<div className="avatar">

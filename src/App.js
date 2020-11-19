@@ -3,6 +3,7 @@ import { GithubContext } from "./context/context";
 import MemeChart from "./Components/chartJSmeme";
 import Profile from "./Components/Profile";
 import Charts from "./Components/ChartData";
+import List from "./Components/List";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 			{/* <MemeChart /> */}
 			<Profile />
 			<Charts />
+			<List />
 		</div>
 	);
 }
