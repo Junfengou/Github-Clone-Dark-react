@@ -13,6 +13,7 @@ const GithubProvider = ({ children }) => {
 	const [followers, setFollowers] = useState(mockFollowers);
 	const [repos, setRepos] = useState(mockRepos);
 	const [request, setRequest] = useState(0);
+	const [error, setError] = useState({ show: false, msg: "" });
 
 	const searchGithubUser = async (user) => {
 		const getProfile = await axios(`${rootUrl}/users/${user}`).catch((err) =>
@@ -44,6 +45,7 @@ const GithubProvider = ({ children }) => {
 			);
 		} else {
 			console.log("do nothing for now");
+			// toggleError(true, "there is no user with that username");
 		}
 		checkRequest();
 	};
@@ -61,18 +63,24 @@ const GithubProvider = ({ children }) => {
 				if (remaining === 0) {
 					// if the remaining request is 0
 					//throw an error
-					// toggleError(true, "Sorry, you have exceeded your hourly rate limit");
-					console.log("Sorry, you have exceeded your hourly rate limit");
+					toggleError(true, "Sorry, you have exceeded your hourly rate limit");
+					// console.log("Sorry, you have exceeded your hourly rate limit");
 				}
 			})
 			.catch((err) => console.log(err));
 	};
 
+	// ------------------------------------------------------------->
+
+	function toggleError(show = false, msg = "") {
+		setError({ show, msg });
+	}
+
 	useEffect(checkRequest, []);
-	console.log("githubUser : ", githubUser);
+	// console.log("githubUser : ", githubUser);
 	return (
 		<GithubContext.Provider
-			value={{ githubUser, repos, followers, searchGithubUser, request }}
+			value={{ githubUser, repos, followers, searchGithubUser, request, error }}
 		>
 			{children}
 		</GithubContext.Provider>

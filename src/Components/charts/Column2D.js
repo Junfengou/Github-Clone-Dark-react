@@ -19,6 +19,7 @@ function Column2D({ data }) {
 				xAxisNameFontSize: "16px",
 				yAxisNameFontSize: "16px",
 				theme: "candy",
+				paletteColors: ["f66a0a", "28a745", "79b8ff", "d075e0", "586069"],
 			},
 			// Chart Data
 			data,

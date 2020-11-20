@@ -9,7 +9,6 @@ function Search() {
 	const [user, setUser] = useState("");
 	const history = useHistory();
 	const { searchGithubUser, request } = useContext(GithubContext);
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (user) {
@@ -37,7 +36,9 @@ function Search() {
 								setUser(e.target.value);
 							}}
 						/>
-						<button type="submit">Search</button>
+						{request > 0 && user === null && (
+							<button type="submit">Search</button>
+						)}
 					</div>
 				</form>
 				<h3>Request: {request} / 60</h3>

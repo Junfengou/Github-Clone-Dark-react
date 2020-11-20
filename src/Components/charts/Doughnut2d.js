@@ -13,12 +13,11 @@ function Doughnut2d({ data }) {
 		dataSource: {
 			// Chart Configuration
 			chart: {
-				caption: "Stars per language",
+				caption: "Programming language",
 				theme: "candy", //make sure the candy theme is imported
 				decimals: 0,
 				doughnutRadius: "45%",
 				pieRadius: "45%",
-				showPercentValues: 0,
 			},
 			// Chart Data
 			data,

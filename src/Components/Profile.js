@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { GithubContext } from "../context/context";
-import { MdBusiness, MdLocationOn, MdLink, MdColorLens } from "react-icons/md";
+import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
+import { BiSearchAlt } from "react-icons/bi";
 import Box from "./Box";
 
 function Profile() {
 	const { githubUser, request } = useContext(GithubContext);
 	const {
 		avatar_url,
-		bio,
 		name,
 		blog,
 		company,
@@ -67,6 +67,7 @@ function Profile() {
 				<div className="message">
 					<p>Request: {request} / 60</p>
 					<p>
+						<BiSearchAlt className="icon_color" />
 						<Link to="/">Search more users</Link>
 					</p>
 				</div>
@@ -137,6 +138,10 @@ const Wrapper = styled.div`
 		}
 	}
 
+	.icon_color {
+		color: var(--lightBlue);
+	}
+
 	.box_container {
 		display: flex;
 		justify-content: space-around;
@@ -162,7 +167,7 @@ const Wrapper = styled.div`
 	a {
 		text-decoration: none;
 		font-size: 1.2rem;
-		color: var(--blue);
+		color: var(--lightBlue);
 		cursor: pointer;
 		&:hover {
 			text-decoration: underline;

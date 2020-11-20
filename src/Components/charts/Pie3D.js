@@ -13,10 +13,10 @@ function ChartComponent({ data }) {
 		dataSource: {
 			// Chart Configuration
 			chart: {
-				caption: "Programming Languages",
+				caption: "Stars per language",
 				theme: "candy",
 				decimals: 0,
-				pieRadius: "45%",
+				pieRadius: "55%",
 				showPercentValues: 0,
 			},
 			// Chart Data
