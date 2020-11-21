@@ -31,13 +31,21 @@ const Wrapper = styled.div`
 	flex-direction: column;
 	color: var(--white);
 
+	h2 {
+		font-size: 2rem;
+		@media (max-width: 1000px) {
+			/* border: solid purple; */
+			font-size: 1.5rem;
+		}
+	}
+
 	h4 {
 		font-size: 1.3rem;
 		font-family: "Harmattan", sans-serif;
 		text-decoration: none;
 		color: var(--white);
 		cursor: pointer;
-	}
+		
 
 	a {
 		text-decoration: none;
@@ -51,6 +59,15 @@ const Wrapper = styled.div`
 	.loading_img {
 		/* border: solid red; */
 		height: 20rem;
+		@media (max-width: 1420px) {
+			/* border: solid purple; */
+			height: 15rem;
+		}
+
+		@media (max-width: 1000px) {
+			/* border: solid purple; */
+			height: 10rem;
+		}
 	}
 `;
 export default NoUser;

@@ -32,5 +32,11 @@ const Wrapper = styled.div`
 		font-size: 1.2rem;
 		font-family: "Harmattan", sans-serif;
 	}
+
+	@media (max-width: 1500px) {
+		width: 9rem;
+		height: 4rem;
+		margin-bottom: 1rem;
+	}
 `;
 export default Box;

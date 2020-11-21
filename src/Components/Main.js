@@ -39,6 +39,16 @@ const Loading = styled.div`
 	.loading_img {
 		/* border: solid red; */
 		height: 20rem;
+
+		@media (max-width: 1420px) {
+			/* border: solid purple; */
+			height: 15rem;
+		}
+
+		@media (max-width: 100px) {
+			/* border: solid purple; */
+			height: 10rem;
+		}
 	}
 
 	h1 {

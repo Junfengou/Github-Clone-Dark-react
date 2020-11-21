@@ -79,15 +79,17 @@ function List() {
 							Top repository by fork
 						</h1>
 					</div>
-					<div className="content">
-						{forks.slice(0, 4).map((item) => {
-							return <Box {...item} />;
-						})}
-					</div>
-					<div className="content">
-						{forks.slice(5, 9).map((item) => {
-							return <Box {...item} />;
-						})}
+					<div className="content_wrapper">
+						<div className="content">
+							{forks.slice(0, 4).map((item) => {
+								return <Box {...item} />;
+							})}
+						</div>
+						<div className="content">
+							{forks.slice(5, 9).map((item) => {
+								return <Box {...item} />;
+							})}
+						</div>
 					</div>
 				</Wrapper>
 			)}
@@ -163,6 +165,7 @@ const Wrapper = styled.div`
 	}
 
 	.content {
+		/* border: solid purple; */
 		display: flex;
 		margin-left: 2rem;
 		margin-bottom: 10px;
@@ -176,6 +179,41 @@ const Wrapper = styled.div`
 	.repo {
 		color: var(--pink);
 		margin-right: 3px;
+	}
+
+	@media (max-width: 1650px) {
+		height: 90vh;
+		width: 100%;
+		justify-content: initial !important;
+
+		.content_wrapper {
+			/* border: solid red; */
+			width: 50rem;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	@media (max-width: 1000px) {
+		height: 170vh;
+		width: 100%;
+		justify-content: initial !important;
+		/* border: solid red; */
+
+		.content_wrapper {
+			/* border: solid red; */
+			width: 35rem;
+			display: flex;
+			justify-content: center !important;
+			align-items: center;
+			flex-direction: column;
+		}
 	}
 `;
 
@@ -252,6 +290,9 @@ const BoxWrapper = styled.div`
 	.star {
 		color: var(--green);
 		margin-right: 3px;
+	}
+	@media (max-width: 1650px) {
+		margin-bottom: 1.2rem;
 	}
 `;
 

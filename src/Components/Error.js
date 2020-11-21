@@ -31,6 +31,18 @@ const Wrapper = styled.div`
 		font-family: "Harmattan", sans-serif;
 		text-decoration: none;
 		color: var(--white);
+		@media (max-width: 1000px) {
+			/* border: solid purple; */
+			font-size: 0.4rem;
+		}
+	}
+
+	h3 {
+		font-size: 1.3rem;
+		@media (max-width: 1000px) {
+			/* border: solid purple; */
+			font-size: 0.9rem;
+		}
 	}
 
 	a {
@@ -44,6 +56,15 @@ const Wrapper = styled.div`
 	.loading_img {
 		/* border: solid red; */
 		height: 20rem;
+		@media (max-width: 1420px) {
+			/* border: solid purple; */
+			height: 15rem;
+		}
+
+		@media (max-width: 1000px) {
+			/* border: solid purple; */
+			height: 10rem;
+		}
 	}
 `;
 export default Error;

@@ -71,8 +71,10 @@ function Profile() {
 			) : (
 				<div className="avatar">
 					<img src={avatar_url} alt="avatar" />
-					<h1>{name}</h1>
-					<a href={html_url}>@{name}</a>
+					<div className="name_wrapper">
+						<h1>{name}</h1>
+						<a href={html_url}>@{name}</a>
+					</div>
 					<div className="item_container">
 						{items.map((item) => {
 							return <Item key={item.id} {...item} />;
@@ -130,6 +132,23 @@ const Wrapper = styled.div`
 		margin-top: -3rem !important;
 	}
 
+	.name_wrapper {
+		/* border: solid red; */
+		width: 20rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		@media (max-width: 1500px) {
+			flex-direction: row;
+			width: 21rem;
+
+			h1 {
+				margin-right: 1rem;
+			}
+		}
+	}
+
 	.message {
 		/* border: solid red; */
 		width: 50%;
@@ -141,6 +160,17 @@ const Wrapper = styled.div`
 			font-size: 1.3rem;
 			/* border: solid red; */
 			font-family: "Harmattan", sans-serif;
+		}
+		@media (max-width: 1500px) {
+			/* border: solid purple; */
+			justify-content: center;
+			p {
+				margin-right: 0.5rem;
+			}
+		}
+
+		@media (max-width: 940px) {
+			flex-direction: column !important;
 		}
 	}
 	.item_container {
@@ -159,6 +189,10 @@ const Wrapper = styled.div`
 				margin-right: 4px;
 			}
 		}
+
+		@media (max-width: 1000px) {
+			flex-direction: column;
+		}
 	}
 
 	.icon_color {
@@ -171,6 +205,10 @@ const Wrapper = styled.div`
 		align-items: center;
 		/* border: solid yellow; */
 		width: 32rem;
+
+		@media (max-width: 1000px) {
+			flex-direction: column;
+		}
 	}
 	img {
 		width: 125px;
@@ -207,6 +245,11 @@ const Wrapper = styled.div`
 
 	.purple {
 		color: var(--purple);
+	}
+	@media (max-width: 1000px) {
+		height: 50rem;
+		width: 100%;
+		background-color: var(--black);
 	}
 `;
 

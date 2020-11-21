@@ -89,6 +89,11 @@ const Wrapper = styled.div`
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			@media (max-width: 1420px) {
+				/* border: solid purple; */
+				margin-top: 9rem;
+			}
 		}
 	}
 
@@ -101,7 +106,7 @@ const Wrapper = styled.div`
 	}
 	p {
 		color: var(--orange);
-		border: solid red;
+		/* border: solid red; */
 	}
 
 	.search {
@@ -154,6 +159,10 @@ const Wrapper = styled.div`
 		h3 {
 			/* border: solid blue; */
 			margin-top: 4.2rem;
+			@media (max-width: 1420px) {
+				/* border: solid red; */
+				margin-top: 5.2rem;
+			}
 		}
 
 		span {
