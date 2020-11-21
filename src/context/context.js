@@ -15,11 +15,13 @@ const GithubProvider = ({ children }) => {
 	const [request, setRequest] = useState(0);
 	const [error, setError] = useState({ show: false, msg: "" });
 	const [invalidUser, setInvalidUser] = useState({ show: false, msg: "" });
+	const [isLoading, setIsLoading] = useState(false);
 
 	// ------------------------------------------------------------->
 
 	const searchGithubUser = async (user) => {
 		toggleError();
+		setIsLoading(true);
 		const response = await axios(`${rootUrl}/users/${user}`).catch((err) =>
 			console.log(err)
 		);
@@ -46,6 +48,7 @@ const GithubProvider = ({ children }) => {
 		} else {
 			invalidUserError(true, `${user} is not a valid username`);
 		}
+		setIsLoading(false);
 	};
 
 	// ------------------------------------------------------------->
@@ -91,6 +94,7 @@ const GithubProvider = ({ children }) => {
 				request,
 				error,
 				invalidUser,
+				isLoading,
 			}}
 		>
 			{children}

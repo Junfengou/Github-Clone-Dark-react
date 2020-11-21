@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Loader from "../image/preloader.gif";
+import githubieGif from "../image/github.gif";
 import { Link, useHistory } from "react-router-dom";
 
 function NoUser() {
@@ -13,11 +13,11 @@ function NoUser() {
 	};
 	return (
 		<Wrapper>
+			<img src={githubieGif} alt="loader" className="loading_img" />
 			<h2>Search bar cannot be empty</h2>
 			<h4>
 				<a onClick={targetLink}>Search more users</a>
 			</h4>
-			<img src={Loader} alt="loader" />
 		</Wrapper>
 	);
 }
@@ -46,6 +46,11 @@ const Wrapper = styled.div`
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+
+	.loading_img {
+		/* border: solid red; */
+		height: 20rem;
 	}
 `;
 export default NoUser;

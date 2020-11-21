@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { GithubContext } from "../context/context";
 import { useHistory } from "react-router-dom";
 import { FaGithubAlt } from "react-icons/fa";
+import githubieGif from "../image/Spinny.gif";
 import Main from "./Main";
 
 function Search() {
@@ -32,8 +33,9 @@ function Search() {
 	return (
 		<Wrapper>
 			<div className="title">
-				<FaGithubAlt className="logo" />
-				<h1>Github user search</h1>
+				{/* <FaGithubAlt className="logo" /> */}
+				<img src={githubieGif} alt="loader" />
+				<h1>Github User Search</h1>
 			</div>
 			<div className="search">
 				<form onSubmit={handleSubmit}>
@@ -57,7 +59,9 @@ function Search() {
 						)}
 					</div>
 				</form>
-				<h3>Request: {request} / 60</h3>
+				<h3>
+					Request: <span>{request}</span> / 60
+				</h3>
 			</div>
 		</Wrapper>
 	);
@@ -78,6 +82,14 @@ const Wrapper = styled.div`
 		font-family: "Harmattan", sans-serif;
 		font-size: 1.2rem;
 		height: 19rem;
+
+		h1 {
+			/* border: solid red; */
+			margin-top: 4rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 
 	.logo {
@@ -89,6 +101,7 @@ const Wrapper = styled.div`
 	}
 	p {
 		color: var(--orange);
+		border: solid red;
 	}
 
 	.search {
@@ -136,6 +149,15 @@ const Wrapper = styled.div`
 				color: var(--black);
 				transition: ease-in-out 0.5s;
 			}
+		}
+
+		h3 {
+			/* border: solid blue; */
+			margin-top: 4.2rem;
+		}
+
+		span {
+			color: var(--purple);
 		}
 	}
 `;

@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import githubieGif from "../image/github.gif";
 
 function Error() {
 	return (
 		<Wrapper>
+			<img src={githubieGif} alt="loader" className="loading_img" />
 			<h1>404 ERROR</h1>
 			<h3>The page you're looking for is not found</h3>
 			<h4>
@@ -38,6 +40,10 @@ const Wrapper = styled.div`
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+	.loading_img {
+		/* border: solid red; */
+		height: 20rem;
 	}
 `;
 export default Error;
