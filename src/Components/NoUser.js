@@ -1,14 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import Loader from "../image/preloader.gif";
+import { Link, useHistory } from "react-router-dom";
 
 function NoUser() {
+	const history = useHistory();
+	const targetLink = () => {
+		history.push({
+			pathname: "/",
+		});
+		history.go(0);
+	};
 	return (
 		<Wrapper>
-			<h2>This user does not exist</h2>
+			<h2>Search bar cannot be empty</h2>
 			<h4>
-				<Link to="/">Go back to home page</Link>
+				<a onClick={targetLink}>Search more users</a>
 			</h4>
+			<img src={Loader} alt="loader" />
 		</Wrapper>
 	);
 }
@@ -27,6 +36,7 @@ const Wrapper = styled.div`
 		font-family: "Harmattan", sans-serif;
 		text-decoration: none;
 		color: var(--white);
+		cursor: pointer;
 	}
 
 	a {

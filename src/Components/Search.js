@@ -1,22 +1,32 @@
 import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import { GithubContext } from "../context/context";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { FaGithubAlt } from "react-icons/fa";
 import Main from "./Main";
 
 function Search() {
 	const [user, setUser] = useState("");
 	const history = useHistory();
-	const { searchGithubUser, request } = useContext(GithubContext);
+	const { searchGithubUser, request, error } = useContext(GithubContext);
+
 	const handleSubmit = (e) => {
-		e.preventDefault();
 		if (user) {
+			e.preventDefault();
 			searchGithubUser(user);
+			setUser("");
+			history.push({
+				pathname: "/home",
+			});
 		}
-		history.push({
-			pathname: "/home",
-		});
+
+		if (!user) {
+			e.preventDefault();
+			// setUser("");
+			history.push({
+				pathname: "/nouser",
+			});
+		}
 	};
 
 	return (
@@ -36,8 +46,14 @@ function Search() {
 								setUser(e.target.value);
 							}}
 						/>
-						{request > 0 && user === null && (
+						{/* {request > 0 && <button type="button">Search</button>} */}
+						{request > 0 ? (
 							<button type="submit">Search</button>
+						) : (
+							<p>
+								{error.msg}
+								<button type="button">Search</button>{" "}
+							</p>
 						)}
 					</div>
 				</form>
@@ -57,18 +73,22 @@ const Wrapper = styled.div`
 	/* border: solid gold; */
 	color: var(--lightBlue);
 
+	.title {
+		/* border: solid gold; */
+		font-family: "Harmattan", sans-serif;
+		font-size: 1.2rem;
+		height: 19rem;
+	}
+
 	.logo {
 		/* border: solid red; */
 		font-size: 12rem;
 		color: var(--lightBlue);
-		margin-left: 2rem;
+		margin-left: 1.7rem;
+		margin-top: 1rem;
 	}
-
-	.title {
-		/* border: solid gold; */
-		margin-bottom: 2rem;
-		font-family: "Harmattan", sans-serif;
-		font-size: 1.2rem;
+	p {
+		color: var(--orange);
 	}
 
 	.search {
@@ -78,6 +98,7 @@ const Wrapper = styled.div`
 		align-items: center;
 		flex-direction: column;
 		width: 40%;
+		margin-bottom: 2rem;
 
 		form {
 			background-color: transparent;

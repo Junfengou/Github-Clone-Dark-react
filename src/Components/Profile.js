@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { GithubContext } from "../context/context";
 import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
 import { BiSearchAlt } from "react-icons/bi";
 import Box from "./Box";
 
 function Profile() {
-	const { githubUser, request } = useContext(GithubContext);
+	const { githubUser, request, invalidUser } = useContext(GithubContext);
 	const {
 		avatar_url,
 		name,
@@ -18,8 +18,17 @@ function Profile() {
 		public_repos,
 		location,
 		html_url,
+		login,
 	} = githubUser;
-	console.log(githubUser);
+
+	const history = useHistory();
+
+	const targetLink = () => {
+		history.push({
+			pathname: "/",
+		});
+		history.go(0);
+	};
 
 	const items = [
 		{
@@ -47,31 +56,44 @@ function Profile() {
 		},
 	];
 
-	console.log("items: ", items);
+	// console.log("items: ", items);
 	return (
 		<Wrapper>
-			<div className="avatar">
-				<img src={avatar_url} alt="avatar" />
-				<h1>{name}</h1>
-				<a href={html_url}>@{name}</a>
-				<div className="item_container">
-					{items.map((item) => {
-						return <Item key={item.id} {...item} />;
-					})}
-				</div>
-				<div className="box_container">
-					<Box data={public_repos} text="Repositories" />
-					<Box data={followers} text="Followers" />
-					<Box data={following} text="Following" />
-				</div>
-				<div className="message">
-					<p>Request: {request} / 60</p>
+			{invalidUser.show ? (
+				<div>
+					<p>{invalidUser.msg}</p>
 					<p>
 						<BiSearchAlt className="icon_color" />
-						<Link to="/">Search more users</Link>
+						<a onClick={targetLink}>Search more users</a>
+						{/* <Link to="/">Search more users</Link> */}
 					</p>
 				</div>
-			</div>
+			) : (
+				<div className="avatar">
+					<img src={avatar_url} alt="avatar" />
+					<h1>{name}</h1>
+					<a href={html_url}>@{name}</a>
+					<div className="item_container">
+						{items.map((item) => {
+							return <Item key={item.id} {...item} />;
+						})}
+					</div>
+					<div className="box_container">
+						<Box data={public_repos} text="Repositories" />
+						<Box data={followers} text="Followers" />
+						<Box data={following} text="Following" />
+					</div>
+					<div className="message">
+						{invalidUser.msg}
+						<p>Request: {request} / 60</p>
+						<p>
+							<BiSearchAlt className="icon_color" />
+							<a onClick={targetLink}>Search more users</a>
+							{/* <Link to="/">Search more users</Link> */}
+						</p>
+					</div>
+				</div>
+			)}
 		</Wrapper>
 	);
 }
@@ -117,6 +139,7 @@ const Wrapper = styled.div`
 
 		p {
 			font-size: 1.3rem;
+			/* border: solid red; */
 			font-family: "Harmattan", sans-serif;
 		}
 	}
@@ -188,3 +211,45 @@ const Wrapper = styled.div`
 `;
 
 export default Profile;
+
+{
+	/**
+
+		<Wrapper>
+			{invalidUser.show ? (
+				<div>
+					<p>{invalidUser.msg}</p>
+					<p>
+						<BiSearchAlt className="icon_color" />
+						<Link to="/">Search more users</Link>
+					</p>
+				</div>
+			) : (
+				<div className="avatar">
+					<img src={avatar_url} alt="avatar" />
+					<h1>{name}</h1>
+					<a href={html_url}>@{name}</a>
+					<div className="item_container">
+						{items.map((item) => {
+							return <Item key={item.id} {...item} />;
+						})}
+					</div>
+					<div className="box_container">
+						<Box data={public_repos} text="Repositories" />
+						<Box data={followers} text="Followers" />
+						<Box data={following} text="Following" />
+					</div>
+					<div className="message">
+						{invalidUser.msg}
+						<p>Request: {request} / 60</p>
+						<p>
+							<BiSearchAlt className="icon_color" />
+							<Link to="/">Search more users</Link>
+						</p>
+					</div>
+				</div>
+			)}
+		</Wrapper>
+
+*/
+}

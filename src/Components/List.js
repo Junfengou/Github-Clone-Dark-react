@@ -9,7 +9,7 @@ import { RiUserLocationFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 function List() {
-	const { repos } = useContext(GithubContext);
+	const { repos, invalidUser } = useContext(GithubContext);
 	console.log("repos: ", repos);
 	const language = repos.reduce((total, item) => {
 		const { language, stargazers_count } = item;
@@ -68,25 +68,30 @@ function List() {
 	//-------------------------------------------------------------->
 
 	return (
-		<Wrapper>
-			<div className="title">
-				<h1>
-					{" "}
-					<RiGitRepositoryLine className="repo" />
-					Top repository by fork
-				</h1>
-			</div>
-			<div className="content">
-				{forks.slice(0, 4).map((item) => {
-					return <Box {...item} />;
-				})}
-			</div>
-			<div className="content">
-				{forks.slice(5, 9).map((item) => {
-					return <Box {...item} />;
-				})}
-			</div>
-		</Wrapper>
+		<div>
+			{invalidUser.show ? (
+				<Nothing></Nothing>
+			) : (
+				<Wrapper>
+					<div className="title">
+						<h1>
+							<RiGitRepositoryLine className="repo" />
+							Top repository by fork
+						</h1>
+					</div>
+					<div className="content">
+						{forks.slice(0, 4).map((item) => {
+							return <Box {...item} />;
+						})}
+					</div>
+					<div className="content">
+						{forks.slice(5, 9).map((item) => {
+							return <Box {...item} />;
+						})}
+					</div>
+				</Wrapper>
+			)}
+		</div>
 	);
 }
 
@@ -128,6 +133,13 @@ const Box = ({ label, fork, language, fullname, size, stars, url }) => {
 		</BoxWrapper>
 	);
 };
+
+const Nothing = styled.div`
+	height: 10rem;
+	width: 100%;
+	/* border: solid red; */
+	background-color: var(--offWhite);
+`;
 
 const Wrapper = styled.div`
 	/* border: solid red; */

@@ -14,8 +14,95 @@ const GithubProvider = ({ children }) => {
 	const [repos, setRepos] = useState(mockRepos);
 	const [request, setRequest] = useState(0);
 	const [error, setError] = useState({ show: false, msg: "" });
+	const [invalidUser, setInvalidUser] = useState({ show: false, msg: "" });
+
+	// ------------------------------------------------------------->
 
 	const searchGithubUser = async (user) => {
+		toggleError();
+		const response = await axios(`${rootUrl}/users/${user}`).catch((err) =>
+			console.log(err)
+		);
+		console.log("check this response: ", response);
+		if (response) {
+			setGithubUser(response.data);
+			const { login, followers_url } = response.data;
+
+			await Promise.allSettled([
+				axios(`${rootUrl}/users/${login}/repos?per_page=100`),
+				axios(`${followers_url}?per_page=100`),
+			])
+				.then((results) => {
+					const [repos, followers] = results;
+					const status = "fulfilled";
+					if (repos.status === status) {
+						setRepos(repos.value.data);
+					}
+					if (followers.status === status) {
+						setFollowers(followers.value.data);
+					}
+				})
+				.catch((err) => console.log(err));
+		} else {
+			invalidUserError(true, `${user} is not a valid username`);
+		}
+	};
+
+	// ------------------------------------------------------------->
+
+	function invalidUserError(show = false, msg = "") {
+		setInvalidUser({ show, msg });
+	}
+
+	// ------------------------------------------------------------->
+
+	function toggleError(show = false, msg = "") {
+		setError({ show, msg });
+	}
+	// ------------------------------------------------------------->
+	const checkRequest = () => {
+		//axios by default is a get request
+		axios(`${rootUrl}/rate_limit`)
+			.then(({ data }) => {
+				// console.log("result:", data);
+				let {
+					rate: { remaining },
+				} = data;
+				// remaining = 0;
+				setRequest(remaining);
+				if (remaining === 0) {
+					// if the remaining request is 0
+					//throw an error
+					toggleError(true, "Sorry, you have exceeded your hourly rate limit");
+				}
+			})
+			.catch((err) => console.log(err));
+	};
+
+	useEffect(checkRequest, []);
+	// console.log("githubUser : ", githubUser);
+	return (
+		<GithubContext.Provider
+			value={{
+				githubUser,
+				repos,
+				followers,
+				searchGithubUser,
+				request,
+				error,
+				invalidUser,
+			}}
+		>
+			{children}
+		</GithubContext.Provider>
+	);
+};
+
+export { GithubProvider, GithubContext };
+
+{
+	/*
+		const searchGithubUser = async (user) => {
 		const getProfile = await axios(`${rootUrl}/users/${user}`).catch((err) =>
 			console.log(err)
 		);
@@ -44,47 +131,11 @@ const GithubProvider = ({ children }) => {
 				}
 			);
 		} else {
-			console.log("do nothing for now");
-			// toggleError(true, "there is no user with that username");
+			console.log("No such user");
+			toggleError(true, "there is no user with that username");
 		}
 		checkRequest();
 	};
 
-	// ------------------------------------------------------------->
-	const checkRequest = () => {
-		//axios by default is a get request
-		axios(`${rootUrl}/rate_limit`)
-			.then(({ data }) => {
-				// console.log("result:", data);
-				let {
-					rate: { remaining },
-				} = data;
-				setRequest(remaining);
-				if (remaining === 0) {
-					// if the remaining request is 0
-					//throw an error
-					toggleError(true, "Sorry, you have exceeded your hourly rate limit");
-					// console.log("Sorry, you have exceeded your hourly rate limit");
-				}
-			})
-			.catch((err) => console.log(err));
-	};
-
-	// ------------------------------------------------------------->
-
-	function toggleError(show = false, msg = "") {
-		setError({ show, msg });
-	}
-
-	useEffect(checkRequest, []);
-	// console.log("githubUser : ", githubUser);
-	return (
-		<GithubContext.Provider
-			value={{ githubUser, repos, followers, searchGithubUser, request, error }}
-		>
-			{children}
-		</GithubContext.Provider>
-	);
-};
-
-export { GithubProvider, GithubContext };
+*/
+}

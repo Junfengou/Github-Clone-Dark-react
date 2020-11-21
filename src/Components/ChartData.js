@@ -6,7 +6,7 @@ import Pie from "./charts/Pie3D";
 import Column from "./charts/Column2D";
 
 function ChartData() {
-	const { repos } = useContext(GithubContext);
+	const { repos, invalidUser } = useContext(GithubContext);
 
 	const dummyData = [
 		{
@@ -85,23 +85,36 @@ function ChartData() {
 
 	// ---------------------------------------------------------------->
 	return (
-		<Wrapper>
-			<div className="chart_container">
-				<div className="chart_box">
-					<Doughnut width="100%" height="100%" data={mostUsed} />
-				</div>
+		<div>
+			{invalidUser.show ? (
+				<Nothing></Nothing>
+			) : (
+				<Wrapper>
+					<div className="chart_container">
+						<div className="chart_box">
+							<Doughnut width="100%" height="100%" data={mostUsed} />
+						</div>
 
-				<div className="chart_box">
-					<Pie data={mostPopular} />
-				</div>
+						<div className="chart_box">
+							<Pie data={mostPopular} />
+						</div>
 
-				<div className="chart_box">
-					<Column data={stars} />
-				</div>
-			</div>
-		</Wrapper>
+						<div className="chart_box">
+							<Column data={stars} />
+						</div>
+					</div>
+				</Wrapper>
+			)}
+		</div>
 	);
 }
+
+const Nothing = styled.div`
+	height: 7rem;
+	width: 100%;
+	/* border: solid red; */
+	background-color: var(--offWhite);
+`;
 
 const Wrapper = styled.div`
 	height: 30rem;
