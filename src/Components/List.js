@@ -220,7 +220,7 @@ const Wrapper = styled.div`
 const BoxWrapper = styled.div`
 	/* border: solid blue; */
 	height: 10rem;
-	width: 23rem;
+	width: 27rem;
 	display: flex;
 	align-items: center;
 	background-color: var(--white);
@@ -229,6 +229,7 @@ const BoxWrapper = styled.div`
 	/* cursor: pointer; */
 
 	.box_container {
+		/* width: 60rem; */
 		padding-left: 2rem;
 		/* border: solid red; */
 		justify-content: center;
