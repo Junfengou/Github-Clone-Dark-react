@@ -133,13 +133,6 @@ const Wrapper = styled.div`
 		display: flex;
 		justify-content: space-evenly;
 		margin-top: -11rem !important;
-		/* @media (max-width: 1500px) {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			margin-top: 0rem !important;
-		} */
 	}
 
 	.chart_box {
@@ -153,10 +146,10 @@ const Wrapper = styled.div`
 		align-items: center;
 	}
 
-	/* @media (max-width: 1500px) {
+	@media (max-width: 1500px) {
 		height: 150vh;
 		width: 100%;
-	} */
+	}
 `;
 
 export default ChartData;

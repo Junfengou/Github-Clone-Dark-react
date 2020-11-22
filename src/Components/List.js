@@ -181,14 +181,14 @@ const Wrapper = styled.div`
 		margin-right: 3px;
 	}
 
-	@media (max-width: 1650px) {
+	@media (max-width: 1900px) {
 		height: 90vh;
 		width: 100%;
 		justify-content: initial !important;
 
 		.content_wrapper {
 			/* border: solid red; */
-			width: 50rem;
+			/* width: 80rem; */
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;

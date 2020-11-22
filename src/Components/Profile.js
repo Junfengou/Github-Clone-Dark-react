@@ -139,7 +139,7 @@ const Wrapper = styled.div`
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		@media (max-width: 1500px) {
+		@media (max-width: 1600px) {
 			flex-direction: row;
 			width: 21rem;
 
