@@ -135,6 +135,15 @@ const Wrapper = styled.div`
 			font-weight: 400;
 			text-align: center;
 			color: var(--white);
+			/* border: solid red; */
+
+			@media (max-width: 1000px) {
+				width: 18rem;
+				height: 2rem;
+				::-webkit-input-placeholder {
+					visibility: hidden;
+				}
+			}
 		}
 
 		button {
