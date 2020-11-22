@@ -4,7 +4,8 @@ import Charts from "./ChartData";
 import List from "./List";
 import Footer from "./Footer";
 import { GithubContext } from "../context/context";
-import githubieGif from "../image/github.gif";
+// import githubieGif from "../image/github.gif";
+import githubieGif from "../image/Rotate.gif";
 import styled from "styled-components";
 
 function Main() {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import githubieGif from "../image/github.gif";
+import githubieGif from "../image/Rotate.gif";
 import { Link, useHistory } from "react-router-dom";
 
 function NoUser() {
@@ -45,28 +45,28 @@ const Wrapper = styled.div`
 		text-decoration: none;
 		color: var(--white);
 		cursor: pointer;
-		
 
-	a {
-		text-decoration: none;
-		font-size: 1.2rem;
-		color: var(--lightBlue);
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	.loading_img {
-		/* border: solid red; */
-		height: 20rem;
-		@media (max-width: 1420px) {
-			/* border: solid purple; */
-			height: 15rem;
+		a {
+			text-decoration: none;
+			font-size: 1.2rem;
+			color: var(--lightBlue);
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 
-		@media (max-width: 1000px) {
-			/* border: solid purple; */
-			height: 10rem;
+		.loading_img {
+			/* border: solid red; */
+			height: 20rem;
+			@media (max-width: 1420px) {
+				/* border: solid purple; */
+				height: 15rem;
+			}
+
+			@media (max-width: 1000px) {
+				/* border: solid purple; */
+				height: 10rem;
+			}
 		}
 	}
 `;

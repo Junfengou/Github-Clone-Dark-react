@@ -8,10 +8,10 @@ ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 function Doughnut2d({ data }) {
 	const chartConfigs = {
 		type: "doughnut2d", // The chart type
-		height: "450", // Height of the chart
-		width: "402",
-		// height: "370",
-		// width: "300",
+		// height: "450", // Height of the chart
+		// width: "402",
+		height: "370",
+		width: "300",
 		dataFormat: "json", // Data type
 		dataSource: {
 			// Chart Configuration
@@ -21,9 +21,9 @@ function Doughnut2d({ data }) {
 				decimals: 0,
 				doughnutRadius: "45%",
 				pieRadius: "45%",
-				// showBorder: true,
-				// borderThickness: 20,
-				// borderColor: "#6a737d",
+				showBorder: true,
+				borderThickness: 20,
+				borderColor: "#6a737d",
 			},
 			// Chart Data
 			data,

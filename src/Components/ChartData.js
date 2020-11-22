@@ -90,17 +90,19 @@ function ChartData() {
 				<Nothing></Nothing>
 			) : (
 				<Grid>
-					<div className="chart_container">
-						<div className="chart_box">
-							<Doughnut data={mostUsed} />
-						</div>
+					<div className="chart_wrapper">
+						<div className="chart_container">
+							<div className="chart_box">
+								<Doughnut data={mostUsed} />
+							</div>
 
-						<div className="chart_box">
-							<Pie data={mostPopular} />
-						</div>
+							<div className="chart_box">
+								<Pie data={mostPopular} />
+							</div>
 
-						<div className="chart_box">
-							<Column data={stars} />
+							<div className="chart_box">
+								<Column data={stars} />
+							</div>
 						</div>
 					</div>
 				</Grid>
@@ -153,7 +155,7 @@ const Flex = styled.div`
 `;
 
 const Grid = styled.div`
-	height: 30rem;
+	height: 22em;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -161,18 +163,32 @@ const Grid = styled.div`
 	background-color: var(--offWhite);
 	/* border: solid red; */
 
+	.chart_wrapper {
+		/* border: solid green; */
+		width: 60%;
+		display: flex;
+		justify-content: space-evenly;
+		/* margin-top: -12rem; */
+
+		@media (max-width: 1000px) {
+			height: 70rem;
+		}
+	}
+
 	.chart_container {
 		/* border: solid purple; */
 		height: 100%;
-		width: 90rem;
+		/* width: 100%; */
+		/* width: 90rem; */
+		width: 65rem;
 		display: flex;
 		grid-template-columns: repeat(3, 1fr);
 		/* margin-left: 7rem; */
 		justify-content: space-evenly;
 		align-items: center;
+		margin-top: -2rem;
 
 		@media (max-width: 1700px) {
-			/* border: solid purple; */
 			height: 100%;
 			width: 70rem;
 			display: grid;
@@ -183,18 +199,18 @@ const Grid = styled.div`
 		}
 
 		@media (max-width: 1000px) {
-			/* height: 20rem; */
+			height: 20rem;
 			/* border: solid purple; */
 			display: flex;
 			justify-content: initial;
 			align-items: center;
 			flex-direction: column;
-			/* margin-top: -7rem; */
+			margin-top: -7rem;
 		}
 	}
 
 	.chart_box {
-		border: solid 12px var(--grey);
+		/* border: solid 12px var(--grey); */
 		border-radius: 15px;
 		width: 25rem;
 		display: grid;
@@ -217,13 +233,13 @@ const Grid = styled.div`
 	}
 
 	@media (max-width: 1700px) {
-		height: 60rem;
+		height: 50rem;
 		width: 100%;
 		align-items: initial;
 	}
 
 	@media (max-width: 1000px) {
-		height: 100rem;
+		height: 70rem;
 		width: 100%;
 	}
 `;
@@ -232,15 +248,21 @@ export default ChartData;
 
 {
 	/**
+	 * 
+	 * <div className="chart_container">
+						<div className="chart_box">
+							<Doughnut data={mostUsed} />
+						</div>
 
-					<div className="chart_container">
-						<Doughnut data={mostUsed} />
+						<div className="chart_box">
+							<Pie data={mostPopular} />
+						</div>
+
+						<div className="chart_box">
+							<Column data={stars} />
+						</div>
 					</div>
-					<div className="chart_container">
-						<Doughnut data={mostUsed} />
-					</div>
-					<div className="chart_container">
-						<Doughnut data={mostUsed} />
-					</div>
+
+					
 */
 }

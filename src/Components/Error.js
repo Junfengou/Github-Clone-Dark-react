@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import githubieGif from "../image/github.gif";
-
+import githubieGif from "../image/Rotate.gif";
 function Error() {
 	return (
 		<Wrapper>
