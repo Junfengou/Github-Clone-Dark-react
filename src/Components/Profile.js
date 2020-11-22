@@ -87,7 +87,7 @@ function Profile() {
 					</div>
 					<div className="message">
 						{invalidUser.msg}
-						<p>Request: {request} / 60</p>
+						<h5>Request: {request} / 60</h5>
 						<p>
 							<BiSearchAlt className="icon_color" />
 							<a onClick={targetLink}>Search more users</a>
@@ -139,25 +139,28 @@ const Wrapper = styled.div`
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		margin-bottom: 1rem;
 		@media (max-width: 1600px) {
-			flex-direction: row;
+			/* flex-direction: row; */
 			width: 21rem;
 
 			h1 {
-				margin-right: 1rem;
+				margin-bottom: -0.8rem;
 			}
 		}
 	}
 
 	.message {
 		/* border: solid red; */
+		height: 6rem;
 		width: 50%;
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: center;
 		align-items: center;
 
 		p {
 			font-size: 1.3rem;
+			margin-left: 1rem;
 			/* border: solid red; */
 			font-family: "Harmattan", sans-serif;
 		}
@@ -165,12 +168,15 @@ const Wrapper = styled.div`
 			/* border: solid purple; */
 			justify-content: center;
 			p {
-				margin-right: 0.5rem;
+				margin-left: 1rem;
 			}
 		}
 
-		@media (max-width: 940px) {
+		@media (max-width: 1000px) {
 			flex-direction: column !important;
+			h5 {
+				margin-bottom: -1rem;
+			}
 		}
 	}
 	.item_container {
@@ -179,8 +185,10 @@ const Wrapper = styled.div`
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-
+		margin-bottom: 0.9rem;
 		.info {
+			/* border: solid red; */
+			height: 1.9rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -201,12 +209,12 @@ const Wrapper = styled.div`
 
 	.box_container {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
 		align-items: center;
 		/* border: solid yellow; */
 		width: 32rem;
 
-		@media (max-width: 1000px) {
+		@media (max-width: 500px) {
 			flex-direction: column;
 		}
 	}
@@ -247,7 +255,7 @@ const Wrapper = styled.div`
 		color: var(--purple);
 	}
 	@media (max-width: 1000px) {
-		height: 60rem;
+		height: 40rem;
 		width: 100%;
 		background-color: var(--black);
 	}

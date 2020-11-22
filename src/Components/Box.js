@@ -22,6 +22,7 @@ const Wrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	margin-right: 1rem;
 	h2 {
 		font-family: "Big Shoulders Stencil Text", cursive;
 	}
@@ -35,6 +36,12 @@ const Wrapper = styled.div`
 
 	@media (max-width: 1500px) {
 		width: 9rem;
+		height: 5rem;
+		margin-bottom: 1rem;
+	}
+
+	@media (max-width: 1000px) {
+		width: 8rem;
 		height: 4rem;
 		margin-bottom: 1rem;
 	}
