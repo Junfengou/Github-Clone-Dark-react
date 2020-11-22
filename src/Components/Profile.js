@@ -140,6 +140,9 @@ const Wrapper = styled.div`
 		align-items: center;
 		flex-direction: column;
 		margin-bottom: 1rem;
+		h1 {
+			margin-bottom: -0.4rem;
+		}
 		@media (max-width: 1600px) {
 			/* flex-direction: row; */
 			width: 21rem;

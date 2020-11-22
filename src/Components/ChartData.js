@@ -199,7 +199,8 @@ const Grid = styled.div`
 		display: grid;
 		justify-content: center;
 		align-items: center;
-		margin-top: -15rem;
+		margin-top: -12rem;
+		/* border: solid red; */
 
 		@media (max-width: 1700px) {
 			display: grid;
