@@ -22,7 +22,7 @@ function Main() {
 			<Profile />
 			<Charts />
 			<List />
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }

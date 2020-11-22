@@ -21,12 +21,22 @@ function Footer() {
 					Styled Components
 				</a>{" "}
 				&middot;{" "}
+			</p>
+			<p>
 				<a
 					href="https://react-icons.github.io/"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					React Icons
+				</a>{" "}
+				&middot;{" "}
+				<a
+					href="https://www.npmjs.com/package/axios"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Axios
 				</a>{" "}
 				and more{" "}
 			</p>
@@ -35,7 +45,7 @@ function Footer() {
 }
 
 const Wrapper = styled.div`
-	height: 5rem;
+	height: 3.6rem;
 	/* border: solid gold; */
 	background-color: var(--offWhite);
 	display: flex;
@@ -50,7 +60,55 @@ const Wrapper = styled.div`
 		text-decoration: none;
 		font-family: "Harmattan", sans-serif;
 		font-size: 1.1rem;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	@media (max-width: 1000px) {
+		display: flex;
+		flex-direction: column;
+		p {
+			/* border: solid red; */
+			margin-top: -2rem;
+		}
+
+		a {
+			margin-left: 7px;
+			margin-right: 7px;
+		}
 	}
 `;
 
 export default Footer;
+
+{
+	/**
+<p>
+				Built with{" "}
+				<a
+					href="https://www.fusioncharts.com/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					FusionChart
+				</a>{" "}
+				&middot;
+				<a
+					href="https://styled-components.com/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Styled Components
+				</a>{" "}
+				&middot;{" "}
+				<a
+					href="https://react-icons.github.io/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					React Icons
+				</a>{" "}
+				and more{" "}
+			</p>
+
+*/
+}

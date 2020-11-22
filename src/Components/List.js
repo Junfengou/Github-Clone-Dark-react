@@ -182,7 +182,8 @@ const Wrapper = styled.div`
 	}
 
 	@media (max-width: 1900px) {
-		height: 90vh;
+		/* border: solid red; */
+		height: 55rem;
 		width: 100%;
 		justify-content: initial !important;
 
@@ -201,7 +202,7 @@ const Wrapper = styled.div`
 	}
 
 	@media (max-width: 1000px) {
-		height: 170vh;
+		height: 100rem;
 		width: 100%;
 		justify-content: initial !important;
 		/* border: solid red; */
@@ -220,7 +221,7 @@ const Wrapper = styled.div`
 const BoxWrapper = styled.div`
 	/* border: solid blue; */
 	height: 10rem;
-	width: 27rem;
+	width: 23rem;
 	display: flex;
 	align-items: center;
 	background-color: var(--white);

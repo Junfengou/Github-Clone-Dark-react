@@ -184,11 +184,13 @@ const Grid = styled.div`
 		}
 
 		@media (max-width: 1000px) {
+			/* height: 20rem; */
 			/* border: solid purple; */
 			display: flex;
-			justify-content: center;
+			justify-content: initial;
 			align-items: center;
 			flex-direction: column;
+			/* margin-top: -7rem; */
 		}
 	}
 
