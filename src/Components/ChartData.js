@@ -92,7 +92,6 @@ function ChartData() {
 				<Grid>
 					<div className="chart_container">
 						<div className="chart_box">
-							{/* <Doughnut width="100%" height="100%" data={mostUsed} /> */}
 							<Doughnut data={mostUsed} />
 						</div>
 
@@ -230,3 +229,18 @@ const Grid = styled.div`
 `;
 
 export default ChartData;
+
+{
+	/**
+
+					<div className="chart_container">
+						<Doughnut data={mostUsed} />
+					</div>
+					<div className="chart_container">
+						<Doughnut data={mostUsed} />
+					</div>
+					<div className="chart_container">
+						<Doughnut data={mostUsed} />
+					</div>
+*/
+}

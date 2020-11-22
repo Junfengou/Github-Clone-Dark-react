@@ -181,7 +181,7 @@ const Wrapper = styled.div`
 		margin-right: 3px;
 	}
 
-	@media (max-width: 1900px) {
+	@media (max-width: 1700px) {
 		/* border: solid red; */
 		height: 55rem;
 		width: 100%;
