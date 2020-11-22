@@ -21,8 +21,8 @@ function Main() {
 		<div>
 			<Profile />
 			<Charts />
-			{/* <List /> */}
-			{/* <Footer /> */}
+			<List />
+			<Footer />
 		</div>
 	);
 }

@@ -247,7 +247,7 @@ const Wrapper = styled.div`
 		color: var(--purple);
 	}
 	@media (max-width: 1000px) {
-		height: 50rem;
+		height: 60rem;
 		width: 100%;
 		background-color: var(--black);
 	}

@@ -9,6 +9,7 @@ function ChartComponent({ data }) {
 	const chartConfigs = {
 		type: "pie3d",
 		height: "450", // Height of the chart
+		width: "402",
 		dataFormat: "json", // Data type
 		dataSource: {
 			// Chart Configuration

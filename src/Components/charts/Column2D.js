@@ -9,6 +9,7 @@ function Column2D({ data }) {
 	const chartConfigs = {
 		type: "column2d", // The chart type
 		height: "450", // Height of the chart
+		width: "402",
 		dataFormat: "json", // Data type
 		dataSource: {
 			// Chart Configuration

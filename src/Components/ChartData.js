@@ -89,10 +89,11 @@ function ChartData() {
 			{invalidUser.show ? (
 				<Nothing></Nothing>
 			) : (
-				<Wrapper>
+				<Grid>
 					<div className="chart_container">
 						<div className="chart_box">
-							<Doughnut width="100%" height="100%" data={mostUsed} />
+							{/* <Doughnut width="100%" height="100%" data={mostUsed} /> */}
+							<Doughnut data={mostUsed} />
 						</div>
 
 						<div className="chart_box">
@@ -103,7 +104,7 @@ function ChartData() {
 							<Column data={stars} />
 						</div>
 					</div>
-				</Wrapper>
+				</Grid>
 			)}
 		</div>
 	);
@@ -116,7 +117,7 @@ const Nothing = styled.div`
 	background-color: var(--offWhite);
 `;
 
-const Wrapper = styled.div`
+const Flex = styled.div`
 	height: 30rem;
 	width: 100%;
 	/* border: solid red; */
@@ -146,8 +147,81 @@ const Wrapper = styled.div`
 		align-items: center;
 	}
 
-	@media (max-width: 1500px) {
+	/* @media (max-width: 1500px) {
 		height: 150vh;
+		width: 100%;
+	} */
+`;
+
+const Grid = styled.div`
+	height: 30rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--offWhite);
+	/* border: solid red; */
+
+	.chart_container {
+		/* border: solid purple; */
+		height: 100%;
+		width: 90rem;
+		display: flex;
+		grid-template-columns: repeat(3, 1fr);
+		/* margin-left: 7rem; */
+		justify-content: space-evenly;
+		align-items: center;
+
+		@media (max-width: 1700px) {
+			/* border: solid purple; */
+			height: 100%;
+			width: 70rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			justify-content: center;
+			align-items: center;
+		}
+
+		@media (max-width: 1000px) {
+			/* border: solid purple; */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+
+	.chart_box {
+		border: solid 12px var(--grey);
+		border-radius: 15px;
+		width: 25rem;
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		margin-top: -15rem;
+
+		@media (max-width: 1700px) {
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			/* border: solid red; */
+			margin-left: 3rem;
+		}
+
+		@media (max-width: 1000px) {
+			margin-top: 2rem;
+		}
+	}
+
+	@media (max-width: 1700px) {
+		height: 60rem;
+		width: 100%;
+		align-items: initial;
+	}
+
+	@media (max-width: 1000px) {
+		height: 100rem;
 		width: 100%;
 	}
 `;

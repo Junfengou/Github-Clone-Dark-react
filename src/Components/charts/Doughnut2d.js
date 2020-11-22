@@ -9,6 +9,7 @@ function Doughnut2d({ data }) {
 	const chartConfigs = {
 		type: "doughnut2d", // The chart type
 		height: "450", // Height of the chart
+		width: "402",
 		dataFormat: "json", // Data type
 		dataSource: {
 			// Chart Configuration
