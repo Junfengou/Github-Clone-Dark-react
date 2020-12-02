@@ -45,7 +45,7 @@ function ChartData() {
 		return total;
 	}, []);
 
-	// console.log("languages: ", language);
+	console.log("languages: ", language);
 
 	// ---------------------------------------------------------------->
 
@@ -113,7 +113,7 @@ function ChartData() {
 
 const Nothing = styled.div`
 	height: 7rem;
-	width: 100%;
+	width: 100vw;
 	/* border: solid red; */
 	background-color: var(--offWhite);
 `;
@@ -224,7 +224,7 @@ const Grid = styled.div`
 			justify-content: center;
 			align-items: center;
 			/* border: solid red; */
-			margin-left: 3rem;
+			margin-left: 1rem;
 		}
 
 		@media (max-width: 1000px) {
@@ -240,6 +240,13 @@ const Grid = styled.div`
 
 	@media (max-width: 1000px) {
 		height: 70rem;
+		width: 100%;
+	}
+
+	@media (max-width: 300px) {
+		/* border: solid red; */
+		width: 100vw;
+		height: 50rem;
 		width: 100%;
 	}
 `;

@@ -19,24 +19,23 @@ function Main() {
 		);
 	}
 	return (
-		<div>
+		<div className="wrapper">
 			<Profile />
 			<Charts />
-			<List />
-			<Footer />
+			{/* <List /> */}
+			{/* <Footer /> */}
 		</div>
 	);
 }
 
 const Loading = styled.div`
 	height: 100vh;
-	width: 100%;
+	width: 100vw;
 	background-color: var(--black);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-
 	.loading_img {
 		/* border: solid red; */
 		height: 20rem;
@@ -54,6 +53,10 @@ const Loading = styled.div`
 
 	h1 {
 		color: var(--purple);
+	}
+
+	.wrapper {
+		border: solid red;
 	}
 `;
 

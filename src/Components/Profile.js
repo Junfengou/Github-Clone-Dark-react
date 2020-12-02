@@ -91,7 +91,6 @@ function Profile() {
 						<p>
 							<BiSearchAlt className="icon_color" />
 							<a onClick={targetLink}>Search more users</a>
-							{/* <Link to="/">Search more users</Link> */}
 						</p>
 					</div>
 				</div>
@@ -227,6 +226,7 @@ const Wrapper = styled.div`
 		border-radius: 100%;
 		border: solid var(--lightBlue);
 		border-width: 0.6rem;
+		/* border: solid red; */
 	}
 
 	h1 {
@@ -262,6 +262,46 @@ const Wrapper = styled.div`
 		width: 100%;
 		background-color: var(--black);
 	}
+
+	@media (max-width: 500px) {
+		height: 40rem;
+		/* width: 30rem; */
+		width: 100%;
+		/* border: solid red; */
+		background-color: var(--black);
+
+		.avatar {
+			/* border: solid red; */
+			img {
+				/* border: solid blueviolet; */
+				height: 90px;
+				width: 90px;
+			}
+		}
+
+		.name_wrapper {
+			/* border: solid blue; */
+			width: 8rem;
+		}
+
+		.box_container {
+			/* border: solid yellow; */
+			display: flex;
+			flex-direction: row;
+			width: 10rem;
+		}
+
+		.item_container {
+			/* border: solid blue; */
+			width: 10rem;
+		}
+	}
+
+	/* @media (max-width: 400px) {
+		height: 40rem;
+		width: 100%;
+		background-color: var(--black);
+	} */
 `;
 
 export default Profile;

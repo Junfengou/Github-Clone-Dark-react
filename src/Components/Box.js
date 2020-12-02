@@ -45,5 +45,19 @@ const Wrapper = styled.div`
 		height: 4rem;
 		margin-bottom: 1rem;
 	}
+
+	@media (max-width: 500px) {
+		/* border: solid green; */
+		height: 3rem;
+		width: 4rem;
+		h2 {
+			font-size: 1.2rem;
+			margin-bottom: 13px;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+	}
 `;
 export default Box;
