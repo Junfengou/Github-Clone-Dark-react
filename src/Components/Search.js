@@ -31,13 +31,13 @@ function Search() {
 	};
 
 	return (
-		<Wrapper>
+		<GithubWrapper>
 			<div className="title">
 				{/* <FaGithubAlt className="logo" /> */}
 				<img src={githubieGif} alt="loader" />
-				<h1>Github User Search</h1>
 			</div>
 			<div className="search">
+				<h1>Github User Search</h1>
 				<form onSubmit={handleSubmit}>
 					<div className="form-control">
 						<input
@@ -63,9 +63,107 @@ function Search() {
 					Request: <span>{request}</span> / 60
 				</h3>
 			</div>
-		</Wrapper>
+		</GithubWrapper>
 	);
 }
+
+const GithubWrapper = styled.div`
+	height: 100vh;
+	width: 100%;
+	background-color: var(--black);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: var(--lightBlue);
+
+	.title {
+		/* border: solid red; */
+		height: 18rem;
+	}
+	.search {
+		/* border: solid red; */
+		display: flex;
+		flex-direction: column;
+		/* justify-content: center; */
+		align-items: center;
+		height: 20rem;
+		width: 20rem;
+		font-family: "Harmattan", sans-serif;
+		font-size: 1.2rem;
+
+		form {
+			background-color: transparent;
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		input {
+			background-color: #26303c;
+			outline: 0;
+			border: 0;
+			border-radius: 0.25rem;
+			margin: 0 auto;
+			padding: 1rem;
+			font-size: 2rem;
+			font-weight: 400;
+			text-align: center;
+			width: 20rem;
+			color: var(--white);
+			/* border: solid blue; */
+		}
+
+		input::-webkit-input-placeholder {
+			font-size: 1.5rem;
+		}
+
+		button {
+			margin-top: 1rem;
+			border-radius: 5px;
+			height: 3.5rem;
+			width: 8rem;
+			border-color: transparent;
+			font-family: "Harmattan", sans-serif;
+			font-size: 1.5rem;
+			padding: 0.5rem 0.5rem;
+			text-transform: capitalize;
+			background: var(--grey);
+			&:hover {
+				background: var(--white);
+				color: var(--black);
+				transition: ease-in-out 0.5s;
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+		.title {
+			height: 11rem;
+
+			img {
+				/* border: solid red; */
+				height: 14rem;
+			}
+		}
+
+		.search {
+			input {
+				/* border: solid red; */
+				width: 15rem;
+			}
+
+			input::-webkit-input-placeholder {
+				font-size: 1.3rem;
+			}
+
+			button {
+				height: 3.5rem;
+				width: 7rem;
+			}
+		}
+	}
+`;
+
 const Wrapper = styled.div`
 	height: 100vh;
 	width: 100%;
@@ -176,6 +274,24 @@ const Wrapper = styled.div`
 
 		span {
 			color: var(--purple);
+		}
+	}
+
+	@media (max-width: 500px) {
+		.title {
+			border: solid red;
+			/* display: flex; */
+			/* height: 40rem; */
+			/* justify-content: center;
+			align-items: center;
+			flex-direction: column; */
+			/* height: 15rem; */
+
+			img {
+				height: 13rem;
+				width: 13rem;
+				border: solid blue;
+			}
 		}
 	}
 `;
