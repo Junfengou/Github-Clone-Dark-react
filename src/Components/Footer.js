@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fullscreen from "../image/Readme/Fullscreen.png";
 function Footer() {
 	return (
 		<Wrapper>
