@@ -45,7 +45,7 @@ function Footer() {
 }
 
 const Wrapper = styled.div`
-	height: 3.6rem;
+	height: 5rem;
 	/* border: solid gold; */
 	background-color: var(--offWhite);
 	display: flex;
@@ -74,6 +74,14 @@ const Wrapper = styled.div`
 		a {
 			margin-left: 7px;
 			margin-right: 7px;
+		}
+	}
+
+	@media (max-width: 500px) {
+		p {
+			/* border: solid red; */
+			margin-top: 1px;
+			font-size: 0.9rem;
 		}
 	}
 `;

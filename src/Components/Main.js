@@ -22,8 +22,8 @@ function Main() {
 		<div className="wrapper">
 			<Profile />
 			<Charts />
-			{/* <List /> */}
-			{/* <Footer /> */}
+			<List />
+			<Footer />
 		</div>
 	);
 }
