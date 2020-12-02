@@ -288,7 +288,7 @@ const Wrapper = styled.div`
 			/* border: solid yellow; */
 			display: flex;
 			flex-direction: row;
-			width: 10rem;
+			width: 15rem;
 		}
 
 		.item_container {

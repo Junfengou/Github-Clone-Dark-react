@@ -118,42 +118,6 @@ const Nothing = styled.div`
 	background-color: var(--offWhite);
 `;
 
-const Flex = styled.div`
-	height: 30rem;
-	width: 100%;
-	/* border: solid red; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: var(--offWhite);
-
-	.chart_container {
-		/* border: solid blue; */
-		height: 30rem;
-		width: 90rem;
-		/* width: 40rem; */
-		display: flex;
-		justify-content: space-evenly;
-		margin-top: -11rem !important;
-	}
-
-	.chart_box {
-		/* border: solid green; */
-		background-color: var(--grey);
-		height: 100%;
-		width: 27rem;
-		border-radius: 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	/* @media (max-width: 1500px) {
-		height: 150vh;
-		width: 100%;
-	} */
-`;
-
 const Grid = styled.div`
 	height: 22em;
 	width: 100%;
@@ -180,7 +144,7 @@ const Grid = styled.div`
 		height: 100%;
 		/* width: 100%; */
 		/* width: 90rem; */
-		width: 65rem;
+		width: 100%;
 		display: flex;
 		grid-template-columns: repeat(3, 1fr);
 		/* margin-left: 7rem; */
@@ -189,6 +153,7 @@ const Grid = styled.div`
 		margin-top: -2rem;
 
 		@media (max-width: 1700px) {
+			/* border: solid purple; */
 			height: 100%;
 			width: 70rem;
 			display: grid;
@@ -196,6 +161,7 @@ const Grid = styled.div`
 			grid-template-rows: 1fr 1fr;
 			justify-content: center;
 			align-items: center;
+			margin-left: 12rem;
 		}
 
 		@media (max-width: 1000px) {
@@ -206,18 +172,20 @@ const Grid = styled.div`
 			align-items: center;
 			flex-direction: column;
 			margin-top: -7rem;
+			margin-left: 5rem;
+			margin-right: 5rem;
 		}
 	}
 
 	.chart_box {
 		/* border: solid 12px var(--grey); */
 		border-radius: 15px;
-		width: 25rem;
+		height: 23rem;
+		width: 30%;
 		display: grid;
 		justify-content: center;
 		align-items: center;
 		margin-top: -12rem;
-		/* border: solid red; */
 
 		@media (max-width: 1700px) {
 			display: grid;

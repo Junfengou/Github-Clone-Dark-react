@@ -48,7 +48,7 @@ const Wrapper = styled.div`
 
 	@media (max-width: 500px) {
 		/* border: solid green; */
-		height: 3rem;
+		height: 3.5rem;
 		width: 4rem;
 		h2 {
 			font-size: 1.2rem;
@@ -56,7 +56,7 @@ const Wrapper = styled.div`
 		}
 
 		p {
-			font-size: 1rem;
+			font-size: 0.9rem;
 		}
 	}
 `;
