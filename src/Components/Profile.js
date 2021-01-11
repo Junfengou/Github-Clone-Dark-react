@@ -87,7 +87,9 @@ function Profile() {
 					</div>
 					<div className="message">
 						{invalidUser.msg}
-						<h5>Request: {request} / 60</h5>
+						<h5>
+							Request: <span>{request}</span> / 60
+						</h5>
 						<p>
 							<BiSearchAlt className="icon_color" />
 							<a onClick={targetLink}>Search more users</a>
@@ -129,6 +131,9 @@ const Wrapper = styled.div`
 		align-items: center;
 		flex-direction: column;
 		margin-top: -3rem !important;
+	}
+	span {
+		color: var(--purple);
 	}
 
 	.name_wrapper {

@@ -31,13 +31,13 @@ function Search() {
 	};
 
 	return (
-		<GithubWrapper>
+		<Wrapper>
 			<div className="title">
 				{/* <FaGithubAlt className="logo" /> */}
 				<img src={githubieGif} alt="loader" />
 			</div>
 			<div className="search">
-				<h1>Github User Search</h1>
+				<h1>Github Creeper</h1>
 				<form onSubmit={handleSubmit}>
 					<div className="form-control">
 						<input
@@ -63,7 +63,7 @@ function Search() {
 					Request: <span>{request}</span> / 60
 				</h3>
 			</div>
-		</GithubWrapper>
+		</Wrapper>
 	);
 }
 
@@ -81,6 +81,10 @@ const GithubWrapper = styled.div`
 		/* border: solid red; */
 		height: 18rem;
 	}
+	span {
+		color: var(--purple);
+	}
+
 	.search {
 		/* border: solid red; */
 		display: flex;
@@ -128,6 +132,7 @@ const GithubWrapper = styled.div`
 			padding: 0.5rem 0.5rem;
 			text-transform: capitalize;
 			background: var(--grey);
+			cursor: pointer;
 			&:hover {
 				background: var(--white);
 				color: var(--black);
@@ -233,15 +238,6 @@ const Wrapper = styled.div`
 			font-weight: 400;
 			text-align: center;
 			color: var(--white);
-			/* border: solid red; */
-
-			@media (max-width: 1000px) {
-				width: 18rem;
-				height: 2rem;
-				::-webkit-input-placeholder {
-					visibility: hidden;
-				}
-			}
 		}
 
 		button {
@@ -274,24 +270,6 @@ const Wrapper = styled.div`
 
 		span {
 			color: var(--purple);
-		}
-	}
-
-	@media (max-width: 500px) {
-		.title {
-			border: solid red;
-			/* display: flex; */
-			/* height: 40rem; */
-			/* justify-content: center;
-			align-items: center;
-			flex-direction: column; */
-			/* height: 15rem; */
-
-			img {
-				height: 13rem;
-				width: 13rem;
-				border: solid blue;
-			}
 		}
 	}
 `;
