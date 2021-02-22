@@ -132,8 +132,7 @@ const Grid = styled.div`
 		width: 60%;
 		display: flex;
 		justify-content: space-evenly;
-		/* margin-top: -12rem; */
-
+		max-width: 1300px;
 		@media (max-width: 1000px) {
 			height: 70rem;
 		}

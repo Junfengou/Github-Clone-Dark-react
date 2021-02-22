@@ -46,8 +46,6 @@ function Footer() {
 }
 
 const Wrapper = styled.div`
-	height: 5rem;
-	/* border: solid gold; */
 	background-color: var(--offWhite);
 	display: flex;
 	justify-content: center;
@@ -68,20 +66,16 @@ const Wrapper = styled.div`
 		display: flex;
 		flex-direction: column;
 		p {
-			/* border: solid red; */
-			margin-top: -2rem;
-		}
-
-		a {
-			margin-left: 7px;
-			margin-right: 7px;
+			line-height: 0.1rem;
 		}
 	}
 
 	@media (max-width: 500px) {
 		p {
-			/* border: solid red; */
-			margin-top: 1px;
+			font-size: 0.9rem;
+		}
+
+		a {
 			font-size: 0.9rem;
 		}
 	}

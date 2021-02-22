@@ -80,6 +80,7 @@ function List() {
 						</h1>
 					</div>
 					<div className="content_wrapper">
+						{/*
 						<div className="content">
 							{forks.slice(0, 4).map((item) => {
 								return <Box {...item} />;
@@ -90,6 +91,10 @@ function List() {
 								return <Box {...item} />;
 							})}
 						</div>
+						*/}
+						{forks.slice(0, 8).map((item) => {
+							return <Box {...item} />;
+						})}
 					</div>
 				</Wrapper>
 			)}
@@ -137,16 +142,12 @@ const Box = ({ label, fork, language, fullname, size, stars, url }) => {
 };
 
 const Nothing = styled.div`
-	height: 10rem;
 	width: 100%;
 	/* border: solid red; */
 	background-color: var(--offWhite);
 `;
 
 const Wrapper = styled.div`
-	/* border: solid red; */
-	height: 30rem;
-	/* height: 100vh; */
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -155,20 +156,19 @@ const Wrapper = styled.div`
 	background-color: var(--offWhite);
 
 	.title {
-		/* border: solid blue; */
 		width: 80%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 2rem;
 		margin-bottom: 1rem;
 	}
 
-	.content {
-		/* border: solid purple; */
-		display: flex;
-		margin-left: 2rem;
-		margin-bottom: 10px;
+	.content_wrapper {
+		width: 80%;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(100px, 1fr));
+		grid-template-rows: 1fr 1fr;
+		gap: 1rem;
 	}
 
 	h1 {
@@ -181,58 +181,44 @@ const Wrapper = styled.div`
 		margin-right: 3px;
 	}
 
-	@media (max-width: 1700px) {
-		/* border: solid red; */
-		height: 55rem;
+	@media (min-width: 1801px) {
+		width: 100%;
+		justify-content: initial !important;
+		.content_wrapper {
+			max-width: 1500px;
+		}
+	}
+
+	@media (max-width: 1800px) {
+		width: 100%;
+		justify-content: initial !important;
+		.content_wrapper {
+			grid-template-columns: repeat(3, minmax(100px, 1fr));
+		}
+	}
+
+	@media (max-width: 1400px) {
 		width: 100%;
 		justify-content: initial !important;
 
 		.content_wrapper {
-			/* border: solid red; */
-			/* width: 80rem; */
-			display: flex;
-			justify-content: space-evenly;
-			align-items: center;
+			justify-items: center;
+			grid-template-columns: repeat(2, minmax(100px, 1fr));
 		}
-
-		.content {
-			display: flex;
-			flex-direction: column;
-		}
-	}
-
-	@media (max-width: 1000px) {
-		height: 100rem;
-		width: 100%;
-		justify-content: initial !important;
 		/* border: solid red; */
-
-		.content_wrapper {
-			/* border: solid red; */
-			width: 25rem;
-			display: flex;
-			justify-content: center !important;
-			align-items: center;
-			flex-direction: column;
-		}
 	}
 
-	@media (max-width: 500px) {
+	@media (max-width: 900px) {
 		.content_wrapper {
-			/* border: solid red; */
-			width: 20rem;
-			display: flex;
-			justify-content: center !important;
-			align-items: center;
-			flex-direction: column;
+			justify-items: center;
+			grid-template-columns: repeat(1, minmax(100px, 1fr));
 		}
 	}
 `;
 
 const BoxWrapper = styled.div`
-	/* border: solid blue; */
 	height: 10rem;
-	width: 23rem;
+	width: 22rem;
 	display: flex;
 	align-items: center;
 	background-color: var(--white);
@@ -243,13 +229,11 @@ const BoxWrapper = styled.div`
 	.box_container {
 		/* width: 60rem; */
 		padding-left: 2rem;
-		/* border: solid red; */
 		justify-content: center;
 		width: 100%;
 	}
 
 	.words {
-		/* border: solid red; */
 		display: flex;
 		.word__first {
 			margin-right: 2rem;
@@ -266,7 +250,7 @@ const BoxWrapper = styled.div`
 
 	h3 {
 		font-family: "Big Shoulders Stencil Text", cursive;
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 	}
 
 	h4 {
@@ -275,6 +259,7 @@ const BoxWrapper = styled.div`
 	p {
 		font-size: 1rem;
 		font-family: "Harmattan", sans-serif;
+		font-size: 0.9rem;
 	}
 	a {
 		text-decoration: none;
@@ -309,9 +294,7 @@ const BoxWrapper = styled.div`
 	}
 
 	@media (max-width: 500px) {
-		/* border: solid blue; */
-		margin-right: 1.5rem;
-		width: 20rem;
+		width: 19rem;
 
 		.box_container {
 			padding-left: 1rem;
@@ -332,15 +315,10 @@ const BoxWrapper = styled.div`
 			margin-right: 0rem;
 		}
 
-		.words {
-			/* border: solid red; */
-			height: 2rem;
-		}
-
 		h3 {
 			font-family: "Big Shoulders Stencil Text", cursive;
 
-			font-size: 1.5rem;
+			font-size: 1.3rem;
 		}
 
 		h4 {

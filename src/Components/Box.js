@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 function Box({ data, text }) {
 	var numForm = data.toLocaleString();
+	console.log({ data });
 	// console.log("data: ", data);
 	// console.log(text);
 	return (

@@ -92,7 +92,7 @@ function Profile() {
 						</h5>
 						<p>
 							<BiSearchAlt className="icon_color" />
-							<a onClick={targetLink}>Search more users</a>
+							<a onClick={targetLink}>Search users</a>
 						</p>
 					</div>
 				</div>
@@ -218,12 +218,7 @@ const Wrapper = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		/* border: solid yellow; */
 		width: 32rem;
-
-		@media (max-width: 500px) {
-			flex-direction: column;
-		}
 	}
 	img {
 		width: 125px;
@@ -290,15 +285,18 @@ const Wrapper = styled.div`
 		}
 
 		.box_container {
-			/* border: solid yellow; */
-			display: flex;
 			flex-direction: row;
+			margin-left: 1.5rem;
 			width: 15rem;
 		}
 
 		.item_container {
 			/* border: solid blue; */
 			width: 10rem;
+		}
+
+		.message {
+			width: 60%;
 		}
 	}
 
